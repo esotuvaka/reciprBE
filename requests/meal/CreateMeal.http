@@ -1,0 +1,21 @@
+POST http://localhost:5223/meals
+Content-Type: application/json
+
+{
+    "name": "Sticky Honey Lemon Chicken",
+	"macros": [{ "calories": 320 }, { "protein": 31 }],
+	"duration": "60 minutes",
+	"tags": ["Dinner", "High Protein", "Chicken"],
+	"ingredients": [
+		"chicken",
+		"lemon juice",
+		"olive oil",
+		"butter",
+		"soy sauce",
+		"honey",
+		"parsley",
+		"rice",
+		"cilantro"
+	],
+	"seasoning": ["garlic powder", "cumin", "oregano"]
+}

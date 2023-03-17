@@ -1,0 +1,12 @@
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE.Contracts\bin\Debug\net6.0\reciprBE.Contracts.deps.json
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE.Contracts\bin\Debug\net6.0\reciprBE.Contracts.dll
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE.Contracts\bin\Debug\net6.0\reciprBE.Contracts.pdb
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE.Contracts\obj\Debug\net6.0\reciprBE.Contracts.csproj.AssemblyReference.cache
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE.Contracts\obj\Debug\net6.0\reciprBE.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE.Contracts\obj\Debug\net6.0\reciprBE.Contracts.AssemblyInfoInputs.cache
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE.Contracts\obj\Debug\net6.0\reciprBE.Contracts.AssemblyInfo.cs
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE.Contracts\obj\Debug\net6.0\reciprBE.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE.Contracts\obj\Debug\net6.0\reciprBE.Contracts.dll
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE.Contracts\obj\Debug\net6.0\refint\reciprBE.Contracts.dll
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE.Contracts\obj\Debug\net6.0\reciprBE.Contracts.pdb
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE.Contracts\obj\Debug\net6.0\ref\reciprBE.Contracts.dll

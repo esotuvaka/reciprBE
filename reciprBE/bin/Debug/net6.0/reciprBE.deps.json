@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "reciprBE/1.0.0": {
+        "dependencies": {
+          "reciprBE.Contracts": "1.0.0"
+        },
+        "runtime": {
+          "reciprBE.dll": {}
+        }
+      },
+      "reciprBE.Contracts/1.0.0": {
+        "runtime": {
+          "reciprBE.Contracts.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "reciprBE/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "reciprBE.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
