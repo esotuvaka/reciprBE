@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "+biXBcx6NAKId14n/ruCxfALVvgaHMtz1SVcEuvdvGpWapuznlEGVcbJ1SCOITdo+io+GpL3VDrF1nOEkA24Sg==",
+  "dgSpecHash": "C2/O02cdmFkCdxoOuWjrUekDzqXNFQQTFv+E9rUYp5hOUkwe84iMpjaX71C9UG5XCk046NchuNhXat4wF5TBAQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\EV-E1\\Desktop\\Code\\reciprBE\\reciprBE\\reciprBE.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\EV-E1\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512"
+  ],
   "logs": []
 }

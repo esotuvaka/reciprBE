@@ -22,3 +22,4 @@ C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE\obj\Debug\net6.0\refint\reciprBE.d
 C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE\obj\Debug\net6.0\reciprBE.pdb
 C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE\obj\Debug\net6.0\reciprBE.genruntimeconfig.cache
 C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE\obj\Debug\net6.0\ref\reciprBE.dll
+C:\Users\EV-E1\Desktop\Code\reciprBE\reciprBE\bin\Debug\net6.0\ErrorOr.dll
