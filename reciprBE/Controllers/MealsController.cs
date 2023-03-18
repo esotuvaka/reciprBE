@@ -35,11 +35,10 @@ public class MealsController : ApiController {
         // TODO: Save meal to database
         ErrorOr<Created> createMealResult = _mealService.CreateMeal(meal);
 
-        if (createMealResult.IsError) {
-            return Problem(createMealResult.Errors);
-        }
-
-        return CreatedAtGetMeal(meal);
+        return createMealResult.Match(
+            created => CreatedAtGetMeal(meal),
+            errors => Problem(errors)
+        );
     }
 
     [HttpGet("{id:guid}")]
@@ -65,10 +64,10 @@ public class MealsController : ApiController {
             request.Seasoning
         );
 
-        ErrorOr<UpsertedMeal> upsertedResult = _mealService.UpsertMeal(meal);
+        ErrorOr<UpsertedMeal> upsertedMealResult = _mealService.UpsertMeal(meal);
 
         // TODO: return 201 if a new meal is created
-        return upsertedResult.Match(
+        return upsertedMealResult.Match(
             upserted => upserted.isNewlyCreated ? CreatedAtGetMeal(meal) : NoContent(),
             errors => Problem(errors)
         );
@@ -76,9 +75,9 @@ public class MealsController : ApiController {
 
     [HttpDelete("{id:guid}")]
     public IActionResult DeleteMeal(Guid id) {
-        ErrorOr<Deleted> deletedResult = _mealService.DeleteMeal(id);
+        ErrorOr<Deleted> deletedMealResult = _mealService.DeleteMeal(id);
 
-        return deletedResult.Match(
+        return deletedMealResult.Match(
             deleted => NoContent(),
             errors => Problem(errors)
         );        

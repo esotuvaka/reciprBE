@@ -1,3 +1,3 @@
-@id=0f549aed-1f47-421d-8662-a13b9cecbdf5
+@id=2f16dbc1-cfc4-477d-a6d2-72a4a4e95ea6
 
 GET http://localhost:5223/meals/{{id}}
