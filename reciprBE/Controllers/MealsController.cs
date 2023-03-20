@@ -21,16 +21,13 @@ public class MealsController : ApiController {
 
     [HttpPost]
     public IActionResult CreateMeal(CreateMealRequest request){
-        var meal = new Meal(
-            Guid.NewGuid(),
-            DateTime.UtcNow,
-            request.Name,
-            request.Macros,
-            request.Duration,
-            request.Tags,
-            request.Ingredients,
-            request.Seasoning
-        );
+        ErrorOr<Meal> requestToMealResult = Meal.From(request);
+
+        if (requestToMealResult.IsError) {
+            return Problem(requestToMealResult.Errors);
+        }
+
+        var meal = requestToMealResult.Value;
 
         // TODO: Save meal to database
         ErrorOr<Created> createMealResult = _mealService.CreateMeal(meal);
@@ -53,20 +50,19 @@ public class MealsController : ApiController {
 
     [HttpPut("{id:guid}")]
     public IActionResult UpsertMeal(Guid id, UpsertMealRequest request){
-        var meal = new Meal(
-            id,
-            DateTime.UtcNow,
-            request.Name,
-            request.Macros,
-            request.Duration,
-            request.Tags,
-            request.Ingredients,
-            request.Seasoning
-        );
+
+        // Controller determines if it received errors or a Meal
+        //  then returns whatever it received.
+        ErrorOr<Meal> requestToMealResult = Meal.From(id, request);
+
+        if (requestToMealResult.IsError) {
+            return Problem(requestToMealResult.Errors);
+        }
+
+        var meal = requestToMealResult.Value;
 
         ErrorOr<UpsertedMeal> upsertedMealResult = _mealService.UpsertMeal(meal);
-
-        // TODO: return 201 if a new meal is created
+ 
         return upsertedMealResult.Match(
             upserted => upserted.isNewlyCreated ? CreatedAtGetMeal(meal) : NoContent(),
             errors => Problem(errors)

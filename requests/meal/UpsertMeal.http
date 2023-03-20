@@ -1,10 +1,10 @@
-@id=2f16dbc1-cfc4-477d-a6d2-72a4a4e95ea6
+@id=101863b7-df99-4ece-baf7-696f9f6e6945
 
 PUT http://localhost:5223/meals/{{id}}
 Content-Type: application/json
 
 {
-    "name": "Sticky Honey Lemon WOW",
+    "name": "YO MOMMA",
 	"macros": [{ "calories": 320 }, { "protein": 31 }],
 	"duration": "60 minutes",
 	"tags": ["Dinner", "High Protein", "Chicken"],

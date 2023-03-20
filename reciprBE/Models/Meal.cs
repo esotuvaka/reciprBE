@@ -1,10 +1,12 @@
 namespace reciprBE.Models;
+using reciprBE.ServiceErrors;
+using reciprBE.Contracts.Meal;
 using ErrorOr;
 
-public class Meal {
-    // Timestamp 55:17, Industry level REST API 
+public class Meal { 
     public const int MinNameLength = 3;
     public const int MaxNameLength = 50;
+   
 
     public Guid Id { get; }
     public DateTime LastModifiedDateTime {get;}
@@ -15,7 +17,9 @@ public class Meal {
     public List<string> Ingredients {get;}
     public List<string> Seasoning {get;}
 
-    // Constructor
+    // Private Constructor
+    // To create a Meal, you MUST use the static "Create" method
+    //  which uses the Factory pattern.
     private Meal(
         Guid id, 
         DateTime lastModifiedDateTime, 
@@ -43,14 +47,21 @@ public class Meal {
         string duration,
         List<string> tags,
         List<string> ingredients,
-        List<string> seasoning
+        List<string> seasoning,
+        Guid? id = null
     ) {
-        // enforce invariants
+        // Enforce invariants or whatever Business rules are required
+        List<Error> errors = new();
         if (name.Length is < MinNameLength or > MaxNameLength) {
-            
+            errors.Add(Errors.Meal.InvalidName);
         }
+
+        if (errors.Count > 0) {
+            return errors;
+        }
+
         return new Meal (
-            Guid.NewGuid(), 
+            id ?? Guid.NewGuid(), 
             DateTime.UtcNow,
             name,
             macros,
@@ -59,5 +70,29 @@ public class Meal {
             ingredients,
             seasoning  
         ); 
+    }
+    
+    // 2 static factory methods. One for upserting (via an ID), other for creating
+    public static ErrorOr<Meal> From(CreateMealRequest request) {
+        return Create(
+            request.Name,
+            request.Macros,
+            request.Duration,
+            request.Tags,
+            request.Ingredients,
+            request.Seasoning
+        );
+    }
+
+    public static ErrorOr<Meal> From(Guid id, UpsertMealRequest request) {
+        return Create(
+            request.Name,
+            request.Macros,
+            request.Duration,
+            request.Tags,
+            request.Ingredients,
+            request.Seasoning,
+            id
+        );
     }
 }
