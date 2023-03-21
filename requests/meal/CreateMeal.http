@@ -2,7 +2,7 @@ POST http://localhost:5223/meals
 Content-Type: application/json
 
 {
-    "name": "FU",
+    "name": "Sticky Honey Lemon Chicken",
 	"macros": [{ "calories": 320 }, { "protein": 31 }],
 	"duration": "60 minutes",
 	"tags": ["Dinner", "High Protein", "Chicken"],
