@@ -2,7 +2,7 @@ POST http://localhost:5223/meals
 Content-Type: application/json
 
 {
-    "name": "High Protein Chicken Alfredo 2",
+    "name": "Chicken Alfredo 300",
 	"description": "38g protein. That's crazy!",
 	"duration": "60",
 	"tags": ["Dinner", "High Protein", "Chicken"],

@@ -2,11 +2,6 @@ namespace reciprBE.Models;
 using reciprBE.ServiceErrors;
 using reciprBE.Contracts.Meal;
 using ErrorOr;
-
-public class Macro {
-
-}
-
 public class Meal { 
     public const int MinNameLength = 3;
     public const int MaxNameLength = 50;

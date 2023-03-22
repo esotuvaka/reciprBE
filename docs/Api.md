@@ -58,7 +58,7 @@ Location: {{host}}/Meals/{{id}}
 {
 	"id": "00000000-0000-0000-0000-000000000000",
 	"name": "Sticky Honey Lemon Chicken",
-	"macros": [{ "calories": 320 }, { "protein": 31 }],
+	"description": "30g protein. Winner winner, chicken dinner!",
 	"duration": "60 minutes",
 	"tags": ["Dinner", "High Protein", "chicken"],
 	"ingredients": [
@@ -94,7 +94,7 @@ GET /Meals/{{id}}
 {
 	"id": "00000000-0000-0000-0000-000000000000",
 	"name": "Sticky Honey Lemon Chicken",
-	"macros": [{ "calories": 320 }, { "protein": 31 }],
+	"description": "30g protein. Winner winner, chicken dinner!",
 	"duration": "60 minutes",
 	"tags": ["Dinner", "High Protein", "chicken"],
 	"ingredients": [
@@ -123,7 +123,7 @@ PUT /Meals/{{id}}
 ```json
 {
 	"name": "Sticky Honey Lemon Chicken",
-	"macros": [{ "calories": 320 }, { "protein": 31 }],
+	"description": "30g protein. Winner winner, chicken dinner!",
 	"duration": "60 minutes",
 	"tags": ["Dinner", "High Protein", "Chicken"],
 	"ingredients": [
