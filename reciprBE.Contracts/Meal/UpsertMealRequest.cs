@@ -3,7 +3,7 @@ namespace reciprBE.Contracts.Meal;
 public record UpsertMealRequest(
     Guid id,
     string Name,
-    List<Dictionary<string, int>> Macros,
+    string Description,
     string Duration,
     List<string> Tags,
     List<string> Ingredients,

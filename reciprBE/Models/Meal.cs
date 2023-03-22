@@ -3,19 +3,25 @@ using reciprBE.ServiceErrors;
 using reciprBE.Contracts.Meal;
 using ErrorOr;
 
+public class Macro {
+
+}
+
 public class Meal { 
     public const int MinNameLength = 3;
     public const int MaxNameLength = 50;
-   
+  
+    public Guid Id { get; private set; }
+    public DateTime LastModifiedDateTime { get; private set; }
+    public string Name { get; private set; }
+    public string Description { get; private set; }
+    public string Duration { get; private set; }
+    public List<string> Tags { get; private set; }
+    public List<string> Ingredients { get; private set; }
+    public List<string> Seasoning { get; private set; }
 
-    public Guid Id { get; }
-    public DateTime LastModifiedDateTime {get;}
-    public string Name {get;}
-    public List<Dictionary<string, int>> Macros {get;}
-    public string Duration {get;}
-    public List<string> Tags {get;}
-    public List<string> Ingredients {get;}
-    public List<string> Seasoning {get;}
+    // EntityFramework will use Reflection to populate the Meal object
+    private Meal() {}
 
     // Private Constructor
     // To create a Meal, you MUST use the static "Create" method
@@ -23,8 +29,8 @@ public class Meal {
     private Meal(
         Guid id, 
         DateTime lastModifiedDateTime, 
-        string name, 
-        List<Dictionary<string, int>> macros, 
+        string name,  
+        string description,
         string duration, 
         List<string> tags, 
         List<string> ingredients, 
@@ -33,8 +39,7 @@ public class Meal {
          
         Id = id;
         LastModifiedDateTime = lastModifiedDateTime;
-        Name = name;
-        Macros = macros;
+        Name = name; 
         Duration = duration;
         Tags = tags;
         Ingredients = ingredients;
@@ -42,8 +47,8 @@ public class Meal {
     }
 
     public static ErrorOr<Meal> Create(
-        string name,
-        List<Dictionary<string, int>> macros,
+        string name, 
+        string description,
         string duration,
         List<string> tags,
         List<string> ingredients,
@@ -63,8 +68,8 @@ public class Meal {
         return new Meal (
             id ?? Guid.NewGuid(), 
             DateTime.UtcNow,
-            name,
-            macros,
+            name, 
+            description,
             duration,
             tags,
             ingredients,
@@ -75,8 +80,8 @@ public class Meal {
     // 2 static factory methods. One for upserting (via an ID), other for creating
     public static ErrorOr<Meal> From(CreateMealRequest request) {
         return Create(
-            request.Name,
-            request.Macros,
+            request.Name, 
+            request.Description,
             request.Duration,
             request.Tags,
             request.Ingredients,
@@ -86,8 +91,8 @@ public class Meal {
 
     public static ErrorOr<Meal> From(Guid id, UpsertMealRequest request) {
         return Create(
-            request.Name,
-            request.Macros,
+            request.Name, 
+            request.Description,
             request.Duration,
             request.Tags,
             request.Ingredients,

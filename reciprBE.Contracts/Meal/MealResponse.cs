@@ -3,8 +3,8 @@ namespace reciprBE.Contracts.Meal;
 public record MealResponse(
     Guid id,
     DateTime LastModifiedDateTime,
-    string Name,
-    List<Dictionary<string, int>> Macros,
+    string Name, 
+    string Description,
     string Duration,
     List<string> Tags,
     List<string> Ingredients,

@@ -83,8 +83,8 @@ public class MealsController : ApiController {
         return new MealResponse (
             meal.Id,
             meal.LastModifiedDateTime,
-            meal.Name,
-            meal.Macros,
+            meal.Name, 
+            meal.Description,
             meal.Duration,
             meal.Tags,
             meal.Ingredients,

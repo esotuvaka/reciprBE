@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 # reciPR API
 
 - [reciPR API](#reciPR-api)
@@ -25,7 +26,7 @@ POST / Meals;
 ```json
 {
 	"name": "Sticky Honey Lemon Chicken",
-	"macros": [{ "calories": 320 }, { "protein": 31 }],
+	"description": "30g protein. Winner winner, chicken dinner!",
 	"duration": "60 minutes",
 	"tags": ["Dinner", "High Protein", "chicken"],
 	"ingredients": [
