@@ -2,20 +2,17 @@ POST http://localhost:5223/meals
 Content-Type: application/json
 
 {
-    "name": "Sticky Honey Lemon Chicken",
-	"macros": [{ "calories": 320 }, { "protein": 31 }],
-	"duration": "60 minutes",
+    "name": "High Protein Chicken Alfredo 2",
+	"description": "38g protein. That's crazy!",
+	"duration": "60",
 	"tags": ["Dinner", "High Protein", "Chicken"],
 	"ingredients": [
 		"chicken",
-		"lemon juice",
-		"olive oil",
-		"butter",
-		"soy sauce",
-		"honey",
-		"parsley",
-		"rice",
-		"cilantro"
+		"pasta",
+		"garlic paste",
+		"skimmed milk",
+		"mozarella",
+		"parsley"
 	],
-	"seasoning": ["garlic powder", "cumin", "oregano"]
+	"seasoning": ["garlic powder", "paprika", "salt", "black pepper"]
 }

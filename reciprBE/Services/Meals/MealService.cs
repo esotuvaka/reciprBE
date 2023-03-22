@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using reciprBE.Models; 
 using reciprBE.ServiceErrors;
 using reciprBE.Persistence;
@@ -46,7 +47,10 @@ public class MealService : IMealService {
     {
         // HTTP protocol requires returning 201 if something is created
         //  204 if something is updated.
-        var isNewlyCreated = _dbContext.Meals.Find(meal.Id) is not Meal;
+
+        // Check for an ID match of the Meal
+        //  if no match then create the meal, otherwise update it
+        var isNewlyCreated = !_dbContext.Meals.Any(b => b.Id == meal.Id);
         
         if (isNewlyCreated) {
             _dbContext.Meals.Add(meal);

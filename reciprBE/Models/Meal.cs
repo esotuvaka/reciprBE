@@ -40,6 +40,7 @@ public class Meal {
         Id = id;
         LastModifiedDateTime = lastModifiedDateTime;
         Name = name; 
+        Description = description;
         Duration = duration;
         Tags = tags;
         Ingredients = ingredients;

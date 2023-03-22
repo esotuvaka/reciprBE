@@ -25,7 +25,7 @@ public class MealConfigurations : IEntityTypeConfiguration<Meal>
             .HasMaxLength(50)
             .IsRequired();
 
-        builder.Property(m => m.Name)
+        builder.Property(m => m.Description)
             .HasMaxLength(150)
             .IsRequired();
 

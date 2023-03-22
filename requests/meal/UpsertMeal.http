@@ -4,9 +4,9 @@ PUT http://localhost:5223/meals/{{id}}
 Content-Type: application/json
 
 {
-    "name": "YO MOMMA",
-	"macros": [{ "calories": 320 }, { "protein": 31 }],
-	"duration": "60 minutes",
+    "name": "Rice bake 4",
+	"description": "microwave it",
+	"duration": "60",
 	"tags": ["Dinner", "High Protein", "Chicken"],
 	"ingredients": [
 		"chicken",
