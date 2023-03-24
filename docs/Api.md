@@ -27,7 +27,7 @@ POST / Meals;
 {
 	"name": "Sticky Honey Lemon Chicken",
 	"description": "30g protein. Winner winner, chicken dinner!",
-	"duration": "60 minutes",
+	"duration": "60",
 	"tags": ["Dinner", "High Protein", "chicken"],
 	"ingredients": [
 		"chicken",
@@ -59,7 +59,7 @@ Location: {{host}}/Meals/{{id}}
 	"id": "00000000-0000-0000-0000-000000000000",
 	"name": "Sticky Honey Lemon Chicken",
 	"description": "30g protein. Winner winner, chicken dinner!",
-	"duration": "60 minutes",
+	"duration": "60",
 	"tags": ["Dinner", "High Protein", "chicken"],
 	"ingredients": [
 		"chicken",
@@ -95,7 +95,7 @@ GET /Meals/{{id}}
 	"id": "00000000-0000-0000-0000-000000000000",
 	"name": "Sticky Honey Lemon Chicken",
 	"description": "30g protein. Winner winner, chicken dinner!",
-	"duration": "60 minutes",
+	"duration": "60",
 	"tags": ["Dinner", "High Protein", "chicken"],
 	"ingredients": [
 		"chicken",
@@ -124,7 +124,7 @@ PUT /Meals/{{id}}
 {
 	"name": "Sticky Honey Lemon Chicken",
 	"description": "30g protein. Winner winner, chicken dinner!",
-	"duration": "60 minutes",
+	"duration": "60",
 	"tags": ["Dinner", "High Protein", "Chicken"],
 	"ingredients": [
 		"chicken",
