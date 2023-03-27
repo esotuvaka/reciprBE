@@ -3,6 +3,7 @@ using reciprBE.Models;
 using reciprBE.ServiceErrors;
 using reciprBE.Persistence;
 using ErrorOr;
+using Microsoft.AspNetCore.Mvc;
 
 namespace reciprBE.Services.Meals;
 
@@ -41,6 +42,11 @@ public class MealService : IMealService {
         }
 
         return Errors.Meal.NotFound;
+    }
+
+    public ErrorOr<JsonResult> GetRandomMeals(int count) {
+        var randomMeals = _dbContext.Meals.OrderBy(m => Guid.NewGuid()).Take(count).ToList();
+        return new JsonResult(randomMeals);
     }
 
     public ErrorOr<UpsertedMeal> UpsertMeal(Meal meal)

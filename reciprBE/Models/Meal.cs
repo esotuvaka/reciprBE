@@ -31,7 +31,6 @@ public class Meal {
         List<string> ingredients, 
         List<string> seasoning) 
     {
-         
         Id = id;
         LastModifiedDateTime = lastModifiedDateTime;
         Name = name; 
@@ -73,7 +72,8 @@ public class Meal {
         ); 
     }
     
-    // 2 static factory methods. One for upserting (via an ID), other for creating
+    // 2 static factory methods. One for creating (if not given an ID),
+    //  other for Upserting when given an ID
     public static ErrorOr<Meal> From(CreateMealRequest request) {
         return Create(
             request.Name, 

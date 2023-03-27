@@ -48,6 +48,17 @@ public class MealsController : ApiController {
         );
     }  
 
+    [HttpGet("random")]
+    public IActionResult GetRandomMeals(int count = 9) {
+        var randomMeals = _mealService.GetRandomMeals(count);
+        
+        if (randomMeals.IsError) {
+            return Problem(randomMeals.Errors);
+        }
+
+        return Ok(randomMeals);
+    }
+
     [HttpPut("{id:guid}")]
     public IActionResult UpsertMeal(Guid id, UpsertMealRequest request){
 
