@@ -1,1 +1,1 @@
-GET http://localhost:5223/meals/random
+GET http://localhost:5223/meals/explore
