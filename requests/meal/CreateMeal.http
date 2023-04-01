@@ -4,7 +4,7 @@ Content-Type: application/json
 {
     "name": "Chicken Alfredo 300",
 	"description": "38g protein. That's crazy!",
-	"duration": "60",
+	"duration": 60,
 	"tags": ["Dinner", "High Protein", "Chicken"],
 	"ingredients": [
 		"chicken",

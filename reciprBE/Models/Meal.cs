@@ -10,7 +10,7 @@ public class Meal {
     public DateTime LastModifiedDateTime { get; private set; }
     public string Name { get; private set; }
     public string Description { get; private set; }
-    public string Duration { get; private set; }
+    public int Duration { get; private set; }
     public List<string> Tags { get; private set; }
     public List<string> Ingredients { get; private set; }
     public List<string> Seasoning { get; private set; }
@@ -26,7 +26,7 @@ public class Meal {
         DateTime lastModifiedDateTime, 
         string name,  
         string description,
-        string duration, 
+        int duration, 
         List<string> tags, 
         List<string> ingredients, 
         List<string> seasoning) 
@@ -44,7 +44,7 @@ public class Meal {
     public static ErrorOr<Meal> Create(
         string name, 
         string description,
-        string duration,
+        int duration,
         List<string> tags,
         List<string> ingredients,
         List<string> seasoning,

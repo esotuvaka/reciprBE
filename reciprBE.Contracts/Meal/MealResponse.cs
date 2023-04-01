@@ -5,7 +5,7 @@ public record MealResponse(
     DateTime LastModifiedDateTime,
     string Name, 
     string Description,
-    string Duration,
+    int Duration,
     List<string> Tags,
     List<string> Ingredients,
     List<string> Seasoning

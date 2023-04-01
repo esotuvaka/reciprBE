@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using reciprBE.Persistence;
 
@@ -11,9 +12,11 @@ using reciprBE.Persistence;
 namespace reciprBE.Migrations
 {
     [DbContext(typeof(ReciprDbContext))]
-    partial class ReciprDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230401010406_durationTypeConvert")]
+    partial class durationTypeConvert
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
