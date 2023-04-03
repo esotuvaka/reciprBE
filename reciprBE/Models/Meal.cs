@@ -10,7 +10,7 @@ public class Meal {
     public DateTime LastModifiedDateTime { get; private set; }
     public string Name { get; private set; }
     public string Description { get; private set; }
-    public int Duration { get; private set; }
+    public int Duration { get; private set; } 
     public List<string> Tags { get; private set; }
     public List<string> Ingredients { get; private set; }
     public List<string> Seasoning { get; private set; }
