@@ -58,7 +58,14 @@ public class MealConfigurations : IEntityTypeConfiguration<Meal>
             .HasConversion(
                 v => string.Join(',', v),
                 v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList()
-            );      
+            );     
+
+        builder.Property(m => m.Instructions) 
+            .HasConversion(
+                v => JsonConvert.SerializeObject(v),
+                v => JsonConvert.DeserializeObject<List<string>>(v, new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore})
+            )
+            .IsRequired();  
     } 
 }
 

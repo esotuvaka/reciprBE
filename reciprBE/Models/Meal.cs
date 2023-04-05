@@ -10,11 +10,12 @@ public class Meal {
     public DateTime LastModifiedDateTime { get; private set; }
     public string Name { get; private set; }
     public string Description { get; private set; } 
-    public List<Dictionary<string, int>> Macros { get; private set; }
+    public List<Dictionary<string, int>> Macros { get; private set; } = new List<Dictionary<string,int>>();
     public int Duration { get; private set; } 
     public List<string> Tags { get; private set; }
     public List<string> Ingredients { get; private set; }
     public List<string> Seasoning { get; private set; }
+    public List<string> Instructions { get; private set; }
 
     // EntityFramework will use Reflection to populate the Meal object
     private Meal() {}
@@ -31,7 +32,9 @@ public class Meal {
         int duration, 
         List<string> tags, 
         List<string> ingredients, 
-        List<string> seasoning) 
+        List<string> seasoning,
+        List<string> instructions
+        ) 
     {
         Id = id;
         LastModifiedDateTime = lastModifiedDateTime;
@@ -42,6 +45,7 @@ public class Meal {
         Tags = tags;
         Ingredients = ingredients;
         Seasoning = seasoning;
+        Instructions = instructions;
     }
 
     public static ErrorOr<Meal> Create(
@@ -52,6 +56,7 @@ public class Meal {
         List<string> tags,
         List<string> ingredients,
         List<string> seasoning,
+        List<string> instructions,
         Guid? id = null
     ) {
         // Enforce invariants or whatever Business rules are required
@@ -73,7 +78,8 @@ public class Meal {
             duration,
             tags,
             ingredients,
-            seasoning  
+            seasoning,
+            instructions
         ); 
     }
     
@@ -87,7 +93,8 @@ public class Meal {
             request.Duration,
             request.Tags,
             request.Ingredients,
-            request.Seasoning
+            request.Seasoning,
+            request.Instructions
         );
     }
 
@@ -100,6 +107,7 @@ public class Meal {
             request.Tags,
             request.Ingredients,
             request.Seasoning,
+            request.Instructions,
             id
         );
     }

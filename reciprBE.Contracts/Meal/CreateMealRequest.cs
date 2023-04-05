@@ -7,5 +7,6 @@ public record CreateMealRequest(
     int Duration,
     List<string> Tags,
     List<string> Ingredients,
-    List<string> Seasoning
+    List<string> Seasoning,
+    List<string> Instructions
 );

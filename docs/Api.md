@@ -41,7 +41,17 @@ POST / Meals;
 		"rice",
 		"cilantro"
 	],
-	"seasoning": ["garlic powder", "cumin", "oregano"]
+	"seasoning": ["garlic powder", "cumin", "oregano"],
+	"instructions": [
+		"Mix chicken, garlic powder, cumin, oregano, lemon juice, olive oil",
+		"Wash rice with sieve and pot until water is clear",
+		"Start boiling the pot with water and rice inside",
+		"Add chicken to pan and cook 10 mins, high heat until sizzling, then remove chicken from pan (keep heat on)",
+		"Once rice is boiling, stir for 3 minutes then turn heat off and drain the water",
+		"Add butter, minced garlic, oregano, lemon juice, soy sauce, and honey directly into the pan then add the chicken back in on top",
+		"Stir together and let simmer on medium heat for 5 mins",
+		"Turn heat off, add cilantro on top of chicken"
+	]
 }
 ```
 

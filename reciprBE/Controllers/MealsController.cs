@@ -100,7 +100,8 @@ public class MealsController : ApiController {
             meal.Duration,
             meal.Tags,
             meal.Ingredients,
-            meal.Seasoning
+            meal.Seasoning,
+            meal.Instructions
         );
     }
 
