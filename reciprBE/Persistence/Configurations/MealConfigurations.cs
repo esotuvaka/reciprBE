@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using reciprBE.Models;  
 using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace reciprBe.Persistence.Configurations;
 
@@ -27,6 +28,14 @@ public class MealConfigurations : IEntityTypeConfiguration<Meal>
 
         builder.Property(m => m.Description)
             .HasMaxLength(150)
+            .IsRequired();
+
+        builder.Property(m => m.Macros)
+            .HasConversion(
+                v => JsonConvert.SerializeObject(v),
+                v => JsonConvert.DeserializeObject<List<Dictionary<string, int>>>(v)
+            )
+            .HasMaxLength(1000)
             .IsRequired();
 
         builder.Property(m => m.Duration)

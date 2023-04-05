@@ -9,7 +9,8 @@ public class Meal {
     public Guid Id { get; private set; }
     public DateTime LastModifiedDateTime { get; private set; }
     public string Name { get; private set; }
-    public string Description { get; private set; }
+    public string Description { get; private set; } 
+    public List<Dictionary<string, int>> Macros { get; private set; }
     public int Duration { get; private set; } 
     public List<string> Tags { get; private set; }
     public List<string> Ingredients { get; private set; }
@@ -25,7 +26,8 @@ public class Meal {
         Guid id, 
         DateTime lastModifiedDateTime, 
         string name,  
-        string description,
+        string description, 
+        List<Dictionary<string, int>> macros,
         int duration, 
         List<string> tags, 
         List<string> ingredients, 
@@ -34,7 +36,8 @@ public class Meal {
         Id = id;
         LastModifiedDateTime = lastModifiedDateTime;
         Name = name; 
-        Description = description;
+        Description = description; 
+        Macros = macros;
         Duration = duration;
         Tags = tags;
         Ingredients = ingredients;
@@ -43,7 +46,8 @@ public class Meal {
 
     public static ErrorOr<Meal> Create(
         string name, 
-        string description,
+        string description, 
+        List<Dictionary<string, int>> macros,
         int duration,
         List<string> tags,
         List<string> ingredients,
@@ -64,7 +68,8 @@ public class Meal {
             id ?? Guid.NewGuid(), 
             DateTime.UtcNow,
             name, 
-            description,
+            description, 
+            macros,
             duration,
             tags,
             ingredients,
@@ -77,7 +82,8 @@ public class Meal {
     public static ErrorOr<Meal> From(CreateMealRequest request) {
         return Create(
             request.Name, 
-            request.Description,
+            request.Description, 
+            request.Macros,
             request.Duration,
             request.Tags,
             request.Ingredients,
@@ -88,7 +94,8 @@ public class Meal {
     public static ErrorOr<Meal> From(Guid id, UpsertMealRequest request) {
         return Create(
             request.Name, 
-            request.Description,
+            request.Description, 
+            request.Macros,
             request.Duration,
             request.Tags,
             request.Ingredients,
