@@ -49,6 +49,20 @@ public class MealService : IMealService {
         return new JsonResult(randomMeals);
     }
 
+    public ErrorOr<JsonResult> GetMealsByTags(string tags) { 
+       var taggedMeals = _dbContext.Meals.AsEnumerable()
+                            .Where(m => m.Tags.Any(
+                                t => tags.Contains(t.ToLower()))
+                            )
+                            .ToList();
+
+        if (taggedMeals is List<Meal> meals) {
+            return new JsonResult(meals);
+        }
+
+        return Errors.Meal.InvalidTags;
+    }
+
     public ErrorOr<UpsertedMeal> UpsertMeal(Meal meal)
     {
         // HTTP protocol requires returning 201 if something is created

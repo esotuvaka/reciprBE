@@ -19,4 +19,6 @@ public interface IMealService {
 
     // Specialized App endpoints
     ErrorOr<JsonResult> GetRandomMeals(int count);
+
+    ErrorOr<JsonResult> GetMealsByTags(string tags);
 }

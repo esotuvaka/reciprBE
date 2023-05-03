@@ -49,8 +49,18 @@ public class MealsController : ApiController {
     }  
 
     [HttpGet("explore")]
-    public IActionResult GetRandomMeals(int count = 9) {
-        var randomMeals = _mealService.GetRandomMeals(count);
+    public IActionResult GetRandomMeals([FromQuery] string tags) {
+        if (!string.IsNullOrEmpty(tags)) {
+            var mealsByTags = _mealService.GetMealsByTags(tags);
+
+            if (mealsByTags.IsError) {
+                return Problem(mealsByTags.Errors);
+            }
+
+            return Ok(mealsByTags);
+        }
+        
+        var randomMeals = _mealService.GetRandomMeals(9);
         
         if (randomMeals.IsError) {
             return Problem(randomMeals.Errors);

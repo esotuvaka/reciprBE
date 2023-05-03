@@ -12,5 +12,9 @@ public static class Errors {
             code: "Meal.NotFound",
             description: "Meal was not found"
         );
+        public static Error InvalidTags => Error.Validation(
+            code: "Meal.InvalidTags",
+            description: $"No meals contain these tags"
+        );
     }
 }
