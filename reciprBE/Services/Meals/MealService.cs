@@ -4,6 +4,7 @@ using reciprBE.ServiceErrors;
 using reciprBE.Persistence;
 using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 
 namespace reciprBE.Services.Meals;
 
@@ -49,11 +50,9 @@ public class MealService : IMealService {
         return new JsonResult(randomMeals);
     }
 
-    public ErrorOr<JsonResult> GetMealsByTags(string tags) { 
-       var taggedMeals = _dbContext.Meals.AsEnumerable()
-                            .Where(m => m.Tags.Any(
-                                t => tags.Contains(t.ToLower()))
-                            )
+    public ErrorOr<JsonResult> GetMealsByTags(string tag) { 
+       var taggedMeals = _dbContext.Meals
+                            .FromSqlRaw($"SELECT * FROM Meals WHERE Tags LIKE '%' + @tag + '%'", new SqlParameter("@tag", tag))
                             .ToList();
 
         if (taggedMeals is List<Meal> meals) {
